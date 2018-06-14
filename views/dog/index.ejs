@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+<div class="container">
+        <div class="jumbotron my-5">
+                <h1 class="display-4">This is a <strong>DogBlog</strong></h1>
+                <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+                <hr class="my-4">
+                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+                <a class="btn btn-primary btn-lg" href="/dogs/new" role="button">Add Dog</a>
+        </div>
+
+        <div class="row">
+                <% dogs.forEach(function(dog){ %>
+                        <div class="col-sm-6 col-md-3 mb-2">
+                                <div class="card">
+                                        <img class="card-img-top" src="<%= dog.image %>">
+                                        <div class="card-body">
+                                                <h5 class="card-title"><%= dog.name %></h5>
+                                                <a href="/dogs/<%= dog._id %>" class="btn btn-primary">More Info</a>
+                                        </div>
+                                </div>
+                        </div>
+                <% }) %>
+        </div>
+</div>
+<% include ../partials/footer %>

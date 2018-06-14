@@ -1,0 +1,18 @@
+<% include ../partials/header %>
+    <div class="container">
+            <div class="card mt-5">
+                <div class="card-header">
+                    <h3>Create a new Comment</h3>
+                </div>
+                <div class="card-body">
+                        <form action="/dogs/<%= dog_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+                            <div class="form-group">
+                                    <label for="comment">comment</label>
+                                    <input type="text" class="form-control" id="comment" name="comment" value="<%= comment.text %>">
+                            </div>
+                            <button class="btn btn-primary">Submit</button>
+                        </form>
+                </div>
+            </div>
+    </div>
+<% include ../partials/footer %>
